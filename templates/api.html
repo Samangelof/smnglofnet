@@ -1,0 +1,155 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<a href="{% url 'all_users' %}">чупапе</a>
+<button>Press me.. :3</button>
+
+
+<script>
+        // function addElement(abstract_variable, tag=String){
+        //         let abstract_variable = document.createElement(tag);
+        //         abstract_variable.textContent = i.abstract_variable
+        // }
+        // function createItem(tag){
+        //     let create = document.createElement(tag);
+        //     create.textContent = 'create';
+        // }
+
+
+
+        // async function ApiViewUsers(RequestUrl){
+        //     await fetch(
+        //         RequestUrl,{
+        //             method: "GET",
+        //             mode: 'no-cors',
+        //             headers: {
+        //                 "Content-Type": "application/json"
+        //             }
+        //         }
+        //     )
+        //     .then(val => val.json())
+        //     .then((val) => {
+                
+        //         for(i of val){
+        //             let username = document.createElement('h3'); 
+        //             let first_name = document.createElement('h4');
+        //             let last_name = document.createElement('h4');
+        //             let avatar = document.createElement('img');
+        //             let avatar_url = document.createElement('a');
+                    
+        //             username.textContent = i.username;
+
+        //             first_name.textContent = i.first_name; 
+        //             last_name.textContent = i.last_name;
+
+        //             avatar_url.textContent = i.avatar;
+        //             avatar.setAttribute('src', i.avatar);
+        //             avatar.textContent = i.avatar;
+        //             avatar_url.setAttribute('href', i.avatar);
+
+        //             document.body.append(username, first_name, last_name, avatar, avatar_url);
+        //         }
+        //     })
+        // };
+        
+        // ApiViewUsers("http://www.aspand3x.beget.tech/api/v1/users/")
+
+        // ApiViewUsers("http://127.0.0.1:4041/api/v5/posts/");        // Ссылка на эндпоинт
+        // ApiViewUsers("http://172.28.0.97:8000/api/v1/users/");
+    
+
+
+        async function getUsers() {
+            let response = await fetch(
+                "http://172.28.0.244:4041/api/v2/users/",{
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }
+            )
+            .then(res => res.json())
+            .then(data => {
+                for(i of data){
+                    let username = document.createElement('h3'); 
+                    let first_name = document.createElement('h4');
+                    let last_name = document.createElement('h4');
+                    let avatar = document.createElement('img');
+                    let avatar_url = document.createElement('a');
+                    
+                    username.textContent = i.username;
+
+                    first_name.textContent = i.first_name; 
+                    last_name.textContent = i.last_name;
+
+                    avatar_url.textContent = i.avatar;
+                    avatar.setAttribute('src', i.avatar);
+                    avatar.textContent = i.avatar;
+                    avatar_url.setAttribute('href', i.avatar);
+
+                    document.body.append(username, first_name, last_name, avatar, avatar_url);
+                }
+                console.log(data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+        }
+
+        getUsers()
+        
+
+        async function getUsers() {
+            let response = await fetch(
+                "http://172.28.0.244:4041/api/v2/users/",{
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }
+            )
+            .then(res => res.json())
+            .then(data => {
+                for(i of data){
+                    let username = document.createElement('h3'); 
+                    let first_name = document.createElement('h4');
+                    let last_name = document.createElement('h4');
+                    let avatar = document.createElement('img');
+                    let avatar_url = document.createElement('a');
+                    
+                    username.textContent = i.username;
+
+                    first_name.textContent = i.first_name; 
+                    last_name.textContent = i.last_name;
+
+                    avatar_url.textContent = i.avatar;
+                    avatar.setAttribute('src', i.avatar);
+                    avatar.textContent = i.avatar;
+                    avatar_url.setAttribute('href', i.avatar);
+
+                    document.body.append(username, first_name, last_name, avatar, avatar_url);
+                }
+                console.log(data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+        }
+
+        getUsers()
+
+</script>
+
+</body>
+</html>
